@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- 视频 -->
+    <div id="video-container">
+        <!-- 放一个div，禁止用户右键控制视频组件显示 -->
+        <div id="video-mask"></div>
+        <!-- 暂停视频出现广告 -->
+        <div id="ad">
+            <img src="resource/ad/0D0100005E0DB3591241923143384738.jpg" alt="">
+        </div>
+        <video src="resource/video/angrybirds.mp4" 
+               id="video"
+               poster="resource/ad/birds.png"
+        ></video>
+        <!-- 视频进度条 -->
+        <div id="progress"></div>
+        <!-- 弹幕 -->
+        <canvas id="canvas" width="865" height="481"></canvas>
+    </div>
+    
+    <!-- 交互设置 -->
+    <div id="video-controll">
+        <button onclick="playandstop()" id="btn1">播放/暂停</button>
+        <button onclick="increvol()">增加音量</button>
+        <button onclick="changePlayRate(0.5)">0.5倍速</button>
+        <button onclick="changePlayRate(1.0)">1.0倍速</button>
+        <button onclick="changePlayRate(1.5)">1.5倍速</button>
+        <p>当前时长：<span id="currentTime"></span>/总时长：<span id="totaltime"></span></p>
+    </div>
+    <div id="barrage">
+        内容：<input type="text" id="text">
+        颜色:
+        <select id="color">
+            <option value="#000000">默认</option>
+            <option value="#ff0000">红色</option>
+            <option value="#00ff00">绿色</option>
+            <option value="#0000ff">蓝色</option>
+        </select>
+        字号:
+        <select id="size">
+            <option value="14px">小的</option>
+            <option value="16px">标准</option>
+            <option value="20px">大的</option>        
+        </select>
+        <button onclick="send()">发送</button>
+        <button onclick="barrageToggle()">打开/关闭弹幕</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
